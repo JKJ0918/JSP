@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>board-jsp</display-name>
+  <!-- application 영역으로 톰켓이 프로젝트마다 관장한다. -->
+  <!-- deployment description : dd 배포 서술자라고 한다. -->
+  
+  <welcome-file-list> <!-- http://192.168.111.101:80/board-jsp/로 접속시 아래 파일을 찾는다. -->
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+   	<param-name>INIT_PARAM</param-name>
+  	<param-value>web.xml에서 만든 초기화 매개값</param-value>
+  </context-param> <!-- jsp에서 web.xml 값을 가져오는 연습 -->
+  <!-- 톰켓에서 에러페이지 처리를 커스텀 처리 -->
+  <error-page>
+   <error-code>404</error-code>
+  	<location>/02ImplicitObject/Exception.jsp</location>
+  </error-page>
+    <error-page>
+   <error-code>405</error-code>
+  	<location>/02ImplicitObject/Exception.jsp</location>
+  </error-page>
+    <error-page>
+   <error-code>500</error-code>
+  	<location>/02ImplicitObject/Exception.jsp</location>
+  </error-page>
+  
+  
+</web-app>
