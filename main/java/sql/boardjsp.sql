@@ -52,5 +52,6 @@ VALUES(SEQ_BOARD_NUM.NEXTVAL, '제목5', '내용5', 'DDD', SYSDATE, 0);
 
 SELECT * FROM MEMBER; -- MEMBER 테이블 전체 보기
 SELECT * FROM BOARD; -- BOARD 테이블 전체 보기
+select * from member where id='KKW' and pass='1234';
 
 

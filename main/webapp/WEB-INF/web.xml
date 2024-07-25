@@ -12,6 +12,26 @@
    	<param-name>INIT_PARAM</param-name>
   	<param-value>web.xml에서 만든 초기화 매개값</param-value>
   </context-param> <!-- jsp에서 web.xml 값을 가져오는 연습 -->
+  
+  <!-- JDBC용 코드 삽입 : 컴파일 없이 수정가능 -->
+  <context-param>
+  <param-name>OracleDriver</param-name>
+  <param-value>oracle.jdbc.OracleDriver</param-value>
+  </context-param>
+    <context-param>
+  <param-name>OracleURL</param-name>
+  <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+    <context-param>
+  <param-name>OracleId</param-name>
+  <param-value>boardjsp</param-value>
+  </context-param>
+    <context-param>
+  <param-name>OraclePwd</param-name>
+  <param-value>1234</param-value>
+  </context-param>
+  
+  
   <!-- 톰켓에서 에러페이지 처리를 커스텀 처리 -->
   <error-page>
    <error-code>404</error-code>
@@ -25,6 +45,13 @@
    <error-code>500</error-code>
   	<location>/02ImplicitObject/Exception.jsp</location>
   </error-page>
+  
+  
+  <!-- 세션 관리하기 -->
+  <session-config>
+  	<session-timeout>20</session-timeout>
+  </session-config> <!-- 세션의 만료시간을 20분으로 설정 -->
+  
   
   
 </web-app>
