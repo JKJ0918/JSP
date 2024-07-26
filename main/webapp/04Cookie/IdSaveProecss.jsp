@@ -7,7 +7,7 @@
 	String user_pw = request.getParameter("user_pw");
 	String save_check = request.getParameter("save_check");
 	
-	if("kkw".equals("user_id") && "1234".equals("user_pw")){
+	if(user_id.equals("kkw") && user_pw.equals("1234")){
 		// id와 pw가 같으면
 		if(save_check != null && save_check.equals("Y")){
 			// 아이디 저장하기 체크이면

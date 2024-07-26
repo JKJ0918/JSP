@@ -9,7 +9,6 @@
 		cookieCheck = "checked" ;
 		// 아이디 저장하기가 체크가 됨을 판단
 	}
-
 %>
 <!DOCTYPE html>
 <html>

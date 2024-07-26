@@ -54,4 +54,4 @@ SELECT * FROM MEMBER; -- MEMBER 테이블 전체 보기
 SELECT * FROM BOARD; -- BOARD 테이블 전체 보기
 select * from member where id='KKW' and pass='1234';
 
-
+select count(*) from board where title like '%제목%';

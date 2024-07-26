@@ -36,10 +36,6 @@
 			request.setAttribute("LoginErrMsg", "id나 pw를 확인해주세요.");
 			request.getRequestDispatcher("LoginForm.jsp").forward(request, response);// 요청한거랑 응답한거 가져 가세요.
 		}
-		
-		
-		
 	%>
-	
 </body>
 </html>
