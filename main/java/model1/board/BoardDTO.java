@@ -15,6 +15,13 @@ public class BoardDTO {
 	public BoardDTO() {} // 기본생성자
 
 	
+	@Override
+	public String toString() { // 객체를 문자열로 변환하여 콘솔 출력
+		return "BoardDTO [num=" + num + ", title=" + title + ", content=" + content + ", id=" + id + ", postdate="
+				+ postdate + ", visitcount=" + visitcount + ", name=" + name + "]";
+	}
+
+
 	// 게터-세터
 	public String getNum() {
 		return num;

@@ -55,3 +55,6 @@ SELECT * FROM BOARD; -- BOARD 테이블 전체 보기
 select * from member where id='KKW' and pass='1234';
 
 select count(*) from board where title like '%제목%';
+
+select B.*, M.* from member M inner join board B on M.id = B.id where num=3; -- Join
+update board set visitcount = visitcount+1 where num=2;
