@@ -51,10 +51,11 @@ public class BoardDAO extends JDBConnect{
 	
 	// 게시물의 리스트를 출력
 	public List<BoardDTO> selectList(Map<String, Object> map){
+		//map -> searchField, searchWord, start, end 가 전달된다.
 		List<BoardDTO> listBoardDTO = new Vector<BoardDTO>();
-		
+		//*vector는 멀티 쓰레드가 가능하기 때문에 사용
 		// 3단계
-		String query = "select * from board";
+		String query = "select *from ( select Tb.*, rownum rNum from ( select * from board ";
 		// 조건 추가
 		if(map.get("searchWord") != null ) {
 			// 검색어가 있으면
@@ -65,14 +66,16 @@ public class BoardDAO extends JDBConnect{
 			// *참고 searchField : String / Object(최상위객체) :  제목, 내용, 작성자		
 		}// 검색어가 있으면 조건이 추가된다.
 		
-		query += " order by num desc"; // 정렬 기준 추가
+		query += "order by num desc ) Tb ) where rNum between ? and ? " ; // 정렬 기준 추가
 		// 3단계 쿼리문 완성
 		
 		// 4단계 쿼리문 실행
 		//*preparedstatement는 무겁다
 		try {
-			statement = connection.createStatement(); // 쿼리문 생성
-			resultSet = statement.executeQuery(query); // 쿼리문 실행 후 결과 표 완성
+			preparedStatement = connection.prepareStatement(query); // 3단계
+			preparedStatement.setString(1, map.get("start").toString()); // 시작번호
+			preparedStatement.setString(2, map.get("end").toString()); // 끝번호
+			resultSet = preparedStatement.executeQuery(); // 4 단계
 			
 			while (resultSet.next()) {
 				BoardDTO boardDTO = new BoardDTO(); // 빈 객체 생성

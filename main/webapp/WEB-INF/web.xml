@@ -31,6 +31,15 @@
   <param-value>1234</param-value>
   </context-param>
   
+  <!-- 페이징 처리용 변수선언 -->
+  <context-param>
+  	<param-name>POSTS_PER_PAGE</param-name>
+  	<param-value>10</param-value> <!-- 한 페이지에 게시물 10개 -->
+  </context-param>
+  <context-param>
+  	<param-name>PAGES_PER_BLOCK</param-name>
+  	<param-value>5</param-value> <!-- 한 화면에 보이는 페이지 블록 5개 -->
+  </context-param>
   
   <!-- 톰켓에서 에러페이지 처리를 커스텀 처리 -->
   <error-page>

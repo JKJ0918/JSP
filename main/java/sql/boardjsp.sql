@@ -58,3 +58,9 @@ select count(*) from board where title like '%제목%';
 
 select B.*, M.* from member M inner join board B on M.id = B.id where num=3; -- Join
 update board set visitcount = visitcount+1 where num=2;
+
+select *from (
+ 			   select Tb.*, rownum rNum from (
+ 			   								  select * from board order by num desc
+ 			   								 ) Tb
+			 ) where rNum between 1 and 10 ;
