@@ -23,7 +23,7 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<a href="../08Board/List.jsp">회원용게시판</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="../09File/List.jsp">파일게시판</a>
+				<a href="../12FileUpload/FileList.jsp">자료게시판</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<a href="../10Mvc/List.jsp">서블릿게시판</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;
